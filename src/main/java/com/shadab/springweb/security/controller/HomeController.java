@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -55,11 +56,15 @@ public class HomeController {
 	
 	@RequestMapping(value="/logout")
 	public String logout(){
-		return "logout";
+ 		return "logout";
 	}
-	
-	@RequestMapping(value="/denied")
+ 	@RequestMapping(value="/denied")
 	public String denied(){
 		return "denied";
+	}
+	
+ 	@RequestMapping(value="/authorization")
+	public String authorization(){
+		return "authorization";
 	}
 }

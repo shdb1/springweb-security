@@ -6,7 +6,7 @@
 <title>Login Page</title>
 </head>
 <body>
-	<h3>Login with Username and Password</h3>
+	<h3>Login with Username and Password:</h3>
 	<c:url var="loginUrl" value="/j_spring_security_check"></c:url>
 	<form action="${loginUrl}" method="POST">
 		<table>

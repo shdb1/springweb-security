@@ -38,16 +38,21 @@
 	</http>  -->
  
  
+
+ 
 	<http  authentication-manager-ref="jdbc-auth"
 		access-decision-manager-ref="accessDecisionManager">	
 		<intercept-url pattern="/api/**" access="Admin" />
+		<!--  <intercept-url pattern="/getStudent*" access="permitAll" /> -->
 		<form-login login-page="/login" authentication-failure-url="/denied"
 			username-parameter="username" password-parameter="password"
 			default-target-url="/home" />
 			
 			<logout invalidate-session="true" logout-success-url="/login"
 			logout-url="/j_spring_security_logout" />
-		<access-denied-handler error-page="/denied"/>
+	
+		<access-denied-handler error-page="/authorization"/>
+		
 		<session-management invalid-session-url="/login">
 			<concurrency-control max-sessions="1"
 				expired-url="/login" />
@@ -82,7 +87,7 @@
 		<authentication-provider>
 			<jdbc-user-service data-source-ref="dataSource"
 				users-by-username-query="select username,password,enabled from students where username = ?"
-				authorities-by-username-query="select username,role from Roles where username = ?" />
+				authorities-by-username-query="select username,role from roles where username = ?" />
 		</authentication-provider>
 	</authentication-manager>
 
