@@ -63,8 +63,19 @@ public class HomeController {
 		return "denied";
 	}
 	
+ 	@RequestMapping(value="/getstudent/dummy")
+	public String getStudent(){
+		return "home";
+	}
+	
+ 	
  	@RequestMapping(value="/authorization")
 	public String authorization(){
 		return "authorization";
+	}
+ 	
+	@RequestMapping(value="/api/dummy")
+	public String dummy(){
+		return "dummy";
 	}
 }

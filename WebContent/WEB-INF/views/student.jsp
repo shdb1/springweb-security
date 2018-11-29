@@ -2,12 +2,12 @@
 <%@ page session="false"%>
 <html>
 <head>
-<title>Get Employee Page</title>
+<title>Get Student Page</title>
 </head>
 <body>
-	<h1>Employee Information</h1>
+	<h1>Student Information</h1>
 	<p>
-		Employee ID:${id}<br> Employee Name:${name}<br>
+		Student ID:${id}<br> Student Name:${name}<br>
 	</p>
 	<c:if test="${pageContext.request.userPrincipal.name != null}">
 	Hi ${pageContext.request.userPrincipal.name}<br>

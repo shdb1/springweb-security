@@ -19,31 +19,33 @@
 
  
  
- 	<!-- <http authentication-manager-ref="jdbc-auth"
+<!--  	<http authentication-manager-ref="jdbc-auth"
 		access-decision-manager-ref="accessDecisionManager">	
 		<intercept-url pattern="/api/**" access="Admin" />
 			
 			<http-basic/>
 		
-	</http> -->
+	</http>  -->
 	
-	
-	<!-- 	 <http authentication-manager-ref="jdbc-auth"
+<!-- 	
+		 <http authentication-manager-ref="jdbc-auth"
 		access-decision-manager-ref="accessDecisionManager">	
 		<form-login />
 		<intercept-url pattern="/api/**" access="Admin" />
 			
 			<http-basic/>
 		
-	</http>  -->
- 
+	</http>  
+  -->
  
 
  
-	<http  authentication-manager-ref="jdbc-auth"
+	<http  authentication-manager-ref="jdbc-auth" 
 		access-decision-manager-ref="accessDecisionManager">	
+		
+		
 		<intercept-url pattern="/api/**" access="Admin" />
-		<!--  <intercept-url pattern="/getStudent*" access="permitAll" /> -->
+		 <intercept-url pattern="/getStudent/**" access="permitAll" />
 		<form-login login-page="/login" authentication-failure-url="/denied"
 			username-parameter="username" password-parameter="password"
 			default-target-url="/home" />
@@ -60,7 +62,7 @@
 			
 			
 		
-	</http>
+	</http> 
 	
 	
 	
@@ -91,7 +93,7 @@
 		</authentication-provider>
 	</authentication-manager>
 
-	<!-- MySQL DB DataSource -->
+	<!-- Postgres DB DataSource -->
 	<beans:bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 
